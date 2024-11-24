@@ -1,0 +1,82 @@
+$primary-color: rgba(0,212,255,1);
+
+@mixin gradient($color1, $color2) {
+    background: linear-gradient(to right, $color1, $color2);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    @include gradient(rgba(146,231,43,1),rgba(0,212,255,1));
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+h1 {
+    color: $primary-color;
+}
+
+button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: darken($primary-color, 10%);
+}
+
+.transactions {
+    border-top: 1px solid #ccc;
+}
+
+.summary {
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
